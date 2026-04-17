@@ -1,0 +1,82 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+continue_playing = True
+
+while continue_playing == True:
+    user_choice = input("Ready 1,2,3 go! What do you choice 'rock', 'paper', 'scissors' \n ").lower()
+
+    game_images = [rock, paper, scissors]
+    computer_choice = random.choice(game_images)
+
+    choice_map = {"rock": rock, "paper": paper, "scissors": scissors}
+
+    user_choice = choice_map[user_choice]
+    if user_choice == rock:
+        if computer_choice == paper:
+            print(computer_choice)
+            print(user_choice)
+            print("You win! papper smohters rock!")
+        if computer_choice == scissors:
+            print(computer_choice)
+            print(user_choice)
+            print("You lose! Rock crushes scissors!")
+        if computer_choice == rock:
+            print(computer_choice)
+            print(user_choice)
+            print("It is a draw.... boringgggg")
+    elif user_choice == paper:
+        if computer_choice == scissors:
+            print(computer_choice)
+            print(user_choice)
+            print("You lose! Scissors slices paper")
+        if computer_choice == rock:
+            print(computer_choice)
+            print(user_choice)
+            print("You win! paper smohters rock!")
+        if computer_choice == paper:
+            print(computer_choice)
+            print(user_choice)
+            print("It is a draw.... boringgggg")
+    elif user_choice == scissors:
+        if computer_choice == rock:
+            print(computer_choice)
+            print(user_choice)
+            print("You lose! Rock crushes scissors!")
+        if computer_choice == paper:
+            print(computer_choice)
+            print(user_choice)
+            print("You win! scissors slices paper!")
+        if computer_choice == scissors:
+            print(computer_choice)
+            print(user_choice)
+            print("It is a draw.... boringgggg")
+    else:
+        print("oops that is not supposed to happen")
+    continues = input('would you like to play again? "y" or "n"').lower()
+    if continues == 'n':
+        continue_playing = False
